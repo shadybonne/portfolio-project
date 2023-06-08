@@ -1,0 +1,10 @@
+footer {
+  background-color: linear-gradient(180deg, #fde50f 26.71%);
+  color: rgb(255, 0, 106);
+  padding: 20px;
+  text-align: center;
+}
+
+footer p {
+  margin: 0;
+}

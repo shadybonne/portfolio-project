@@ -197,8 +197,9 @@ nav ul li {
 
 /* Footer Styles */
 footer {
-  background-color: #BF4F74;
-  color: #fff;
+  background-color: linear-gradient(180deg, #fde50f 26.71%);
+  color: rgb(255, 0, 106);
   padding: 10px;
   text-align: center;
+  margin: 0;
 }

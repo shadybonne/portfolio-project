@@ -1,7 +1,4 @@
-import React, { useState } from 'react';
-import 'slick-carousel/slick/slick.css';
-import 'slick-carousel/slick/slick-theme.css';
-import 'react-datepicker/dist/react-datepicker.css';
+import React, { useState, useEffect } from 'react';
 
 const Content = () => {
   const [location, setLocation] = useState('');

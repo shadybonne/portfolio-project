@@ -27,10 +27,7 @@ const Header = () => {
           <button className="button">Contact us</button>
         </div>
         <div className={`menu-button ${menuOpen ? 'active' : ''}`} onClick={toggleMenu}>
-          <span>Home</span>
-          <span>Services</span>
-          <span>Bookings</span>
-          <span>About</span>
+          <span></span>
         </div>
       </nav>
     </header>

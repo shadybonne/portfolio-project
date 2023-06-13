@@ -15,7 +15,7 @@
 .n-name{
     font-size: 2.3rem;
     font-weight: bold;
-    background: linear-gradient(55deg, red, blue, yellow);
+    background: linear-gradient(55deg, red, rgb(107, 107, 206), yellow);
 }
 
 .n-right{
@@ -53,3 +53,21 @@
     background-color: linear-gradient(180deg, #fde50f 26.71%,);
     box-shadow: 20px 10px 20px rgb(189, 147, 33);
 }
+
+.menu-icon.open {
+    color: #181717;
+  }
+  
+  .n-list.open {
+    display: block;
+  }
+  
+  @media (max-width: 768px) {
+    .n-list {
+      display: none;
+    }
+  
+    .n-list.open {
+      display: block;
+    }
+  }

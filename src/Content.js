@@ -10,7 +10,7 @@ const Content = () => {
   const fetchVenues = (location, venueType) => {
     const venuesData = [
       { name: 'Wedding', location: 'Abuja', capacity: 200, amenities: 'Wi-Fi, Parking', price: 1000, Image: 'img'},
-      { name: 'Pool Party', location: 'Lagos', capacity: 150, amenities: 'Catering, Audio System', price: 800, Image: 'img2.jpg' },
+      { name: 'Pool Party', location: 'Lagos', capacity: 150, amenities: 'Catering, Audio System', price: 800, Image: 'img' },
       { name: 'Wedding', location: 'Lagos', capacity: 150, amenities: 'Waiters, Dancers', price: 800, Image: 'img3.jpg' },
       { name: 'Conference', location: 'Lagos', capacity: 150, amenities: 'Free Catering, live Band', price: 800, Image: 'img4.jpg' },
       { name: 'Birthday', location: 'Abuja', capacity: 150, amenities: 'Light, Free DJ', price: 800, Image: 'img5.jpg' },
@@ -62,8 +62,7 @@ const Content = () => {
   return (
     <main>
       <section className="search-section">
-        <h1>Find and Book the Perfect Event Venues</h1>
-        <h2>from over 5,100 Halls in Nigeria</h2>
+        <h1>Find and Book the Perfect Event Venues in Nigeria</h1>
         <form className="search-form" onSubmit={handleFormSubmit}>
           <label htmlFor="location">Location:</label>
           <input type="text" value={location} onChange={handleLocationChange} placeholder="Enter Location" />

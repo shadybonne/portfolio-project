@@ -6,7 +6,7 @@ const useBookingForm = () => {
   const [name, setName] = useState('');
   const [phone, setPhone] = useState('');
   const [date, setDate] = useState('');
-  const [guests, setGuests] = useState('');
+  const [guests, setGuests] = useState('0');
 
   const handleBookNow = (e) => {
     e.preventDefault();
@@ -17,12 +17,12 @@ const useBookingForm = () => {
 
   const handleFormSubmit = (e) => {
     e.preventDefault();
-    // Process the form submission (e.g., send data to server, perform actions)
-    // Reset the form
+
     setName('');
     setPhone('');
     setDate('');
     setGuests('');
+    alert('Booking submitted successfully!');
   };
 
   return {
@@ -57,32 +57,46 @@ const Booking = (venue) => {
 
   return (
     <div className="venue-card" key={venue.name}>
-      <img src="img3.jpg" alt={venue.name} />
+      <img src={venue.image} alt={venue.name} />
       <h3>{venue.name}</h3>
       <p>Location: {venue.location}</p>
       <p>Capacity: {venue.capacity} people</p>
       <p>Amenities: {venue.amenities}</p>
       <p>Price: #{venue.price}</p>
-      <a href="#" onClick={handleBookNow}>Book Now</a>
+      <button type="button" onClick={handleBookNow}>Book Now</button>
 
-      {/* Booking Form */}
+      <div class='form'>
+        <ul>
       {showBookingForm && (
         <form className="booking-form" onSubmit={handleFormSubmit}>
+          <li>
           <label htmlFor="name">Name:</label>
-          <input type="text" id="name" value={name} onChange={(e) => setName(e.target.value)} />
+          <input type="text" id="name" value={name} onChange={(e) => setName(e.target.value)} required/>
+          </li>
 
+          <li>
           <label htmlFor="phone">Phone Number:</label>
-          <input type="tel" id="phone" value={phone} onChange={(e) => setPhone(e.target.value)} />
+          <input type="number" id="phone" value={phone} onChange={(e) => setPhone(e.target.value)} required/>
+          </li>
 
+          <li>
           <label htmlFor="date">Date of Event:</label>
-          <input type="date" id="date" value={date} onChange={(e) => setDate(e.target.value)} />
+          <input type="date" id="date" value={date} onChange={(e) => setDate(e.target.value)} min={new Date().toISOString().split('T')[0]}/>
+          </li>
 
-          <label htmlFor="guests">Expected Number of Guests:</label>
-          <input type="number" id="guests" value={guests} onChange={(e) => setGuests(e.target.value)} />
+          <li>
+          <label htmlFor="guests">Number of Guests:</label>
+          <input type="number" id="guests" value={guests} onChange={(e) => setGuests(e.target.value)} min="100" max="1000"/>
+          </li>
 
           <button type="submit">Submit</button>
+        
+
         </form>
+      
       )}
+        </ul>
+      </div>
     </div>
   );
 };

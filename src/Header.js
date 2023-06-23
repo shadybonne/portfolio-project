@@ -10,7 +10,7 @@ const Header = () => {
 
     return (
         <header>
-            <nav className='n-wrapper'>
+            <nav className='header'>
                 <div className="n-left">
                     <h1 className="n-name">Event Venue</h1>
                     <label htmlFor="menu-toggle" className={`menu-icon ${menuOpen ? 'open' : ''}`} onClick={handleMenuToggle}>&#9776;</label>
@@ -20,11 +20,11 @@ const Header = () => {
                             <li><a href="#">Services</a></li>
                             <li><a href="#">Events</a></li>
                             <li><a href="#">About</a></li>
+                            
                         </ul>
                     </div>
                 </div>
                 <div className="n-right">
-                    <div className="n-list"></div>
                     <button className="button">Contact us</button>
                 </div>
             </nav>

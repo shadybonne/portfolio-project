@@ -1,20 +1,20 @@
-.n-wrapper{
-    height: 10vh;
+.header {
+    height: 8vh;
     display: flex;
     justify-content: space-between;
     
 }
 
 .n-left{
-    flex: 1;
+    flex: auto;
     align-items: center;
     display: flex;
-    gap: 2rem;
+    gap: 1rem;
 }
 
 .n-name{
-    font-size: 2.3rem;
-    font-weight: bold;
+    font-size: 2.0rem;
+    font-weight:bold;
     background: linear-gradient(55deg, red, rgb(107, 107, 206), yellow);
 }
 
@@ -23,12 +23,9 @@
     flex: 1;
     align-items: center;
     justify-content: center;
-    font-weight: 400;
+    font-weight: 200;
 }
 
-.n-list{
-    flex: 10;
-}
 
 .n-list>ul{
     display: flex;
@@ -37,15 +34,16 @@
 }
 
 .n-list>ul>li:hover{
+    display: flex;
     cursor: pointer;
     text-decoration: underline;
     color: blue;
+    
 }
 
 .button{
     border-radius: 54px;
     border: none;
-    color: rgba(red, green, blue, alpha);
     font-size: 16px;
     padding: 10px;
     cursor: pointer;
@@ -56,11 +54,9 @@
 
 .menu-icon.open {
     color: #181717;
+    cursor: pointer;
   }
   
-  .n-list.open {
-    display: block;
-  }
   
   @media (max-width: 768px) {
     .n-list {
@@ -68,6 +64,6 @@
     }
   
     .n-list.open {
-      display: block;
+      display: flex;
     }
   }

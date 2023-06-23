@@ -1,10 +1,13 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
+
 
 const Content = () => {
   const [location, setLocation] = useState('');
   const [venueType, setVenueType] = useState('all');
   const [venues, setVenues] = useState([]);
+  const [showBookingForm, setShowBookingForm] = useState(false);
   
+
 
 
   const fetchVenues = (location, venueType) => {
@@ -26,23 +29,23 @@ const Content = () => {
     return filteredVenues;
   };
 
- // const createVenueCard = (venue) => {
- //   const handleBookNow = (e) => {
- //     e.preventDefault();
- //   };
+  const createVenueCard = (venue) => {
+    const handleBookNow = (e) => {
+     e.preventDefault();
+    };
     
- //   return (
-//      <div className="venue-card" key={venue.name}>
-//        <img src='/img.jpg' alt={venue.name} className='venue-image'/>
-//        <h3>{venue.name}</h3>
- //       <p>Location: {venue.location} </p>
-//        <p>Capacity: {venue.capacity} people</p>
-//        <p>Amenities: {venue.amenities}</p>
-//        <p>Price: #{venue.price}</p>
-//        <a href="#">Book Now</a>
- //     </div>
-//    );
-//  };
+    return (
+      <div className="venue-card" key={venue.name}>
+        <img src={venue.Image || '/default-image.jpg'} alt={venue.name} className='venue-image'/>
+        <h3>{venue.name}</h3>
+        <p>Location: {venue.location} </p>
+        <p>Capacity: {venue.capacity} people</p>
+        <p>Amenities: {venue.amenities}</p>
+        <p>Price: #{venue.price}</p>
+        <button type="button" onClick={handleBookNow}>Book Now</button>
+      </div>
+    );
+  };
 
   const handleLocationChange = (e) => {
     setLocation(e.target.value);
@@ -52,11 +55,20 @@ const Content = () => {
     setVenueType(e.target.value);
   };
 
+
+  const handleBookNow = (e) => {
+    e.preventDefault();
+    setShowBookingForm(true);
+
+  };
+
+
   const handleFormSubmit = (e) => {
     e.preventDefault();
     const filteredVenues = fetchVenues(location, venueType);
     setVenues(filteredVenues);
   };
+
 
 
   return (
@@ -78,7 +90,7 @@ const Content = () => {
       </section>
 
       <section className="venue-results" id="venueResults">
-        <h2>Search Results</h2>
+        <h2></h2>
         {venues.length > 0 ? (
           <div className="venue-card-container">
             {venues.map((venue) => (
@@ -87,9 +99,9 @@ const Content = () => {
                 <h3>{venue.name}</h3>
                 <p>Location: {venue.location}</p>
                 <p>Capacity: {venue.capacity} people</p>
-                <p>Amenities: {venue.amenities} Free Food</p>
+                <p>Amenities: {venue.amenities}</p>
                 <p>Price: #{venue.price}</p>
-                <a href="#">Book Now</a>
+                <button type="button" onClick={handleBookNow}>Book Now</button>
               </div>
             ))}
           </div>

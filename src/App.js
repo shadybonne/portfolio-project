@@ -5,7 +5,6 @@ import './Header.css'
 import Booking from './Booking';
 
 
-
 function App() {
   return (
     <div className="App">
